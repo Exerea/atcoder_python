@@ -1,14 +1,28 @@
 def main():
-    H = int(input())
+    import math
 
-    height = 0
-    i = 0
+    N = int(input())
+    A_C = []
 
-    while height <= H:
-        height += 2**i
-        i += 1
+    for i in range(N):
+        A, C = map(int, input().split())
+        A_C.append([A, C, i + 1])  # インデックスを追加
 
-    print(i)
+    A_C.sort(reverse=True)  # 強さで降順にソート
+
+    S = []
+
+    max_cost = math.inf
+    for A, C, idx in A_C:
+        if C <= max_cost:
+            S.append(idx)
+            max_cost = C
+
+    S.sort()
+
+    print(len(S))
+    for idx in S:
+        print(idx, "", end="")
 
 
 if __name__ == "__main__":
