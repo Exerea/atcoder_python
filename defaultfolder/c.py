@@ -1,14 +1,12 @@
 def main():
-    H = int(input())
+    N = int(input())
 
-    height = 0
-    i = 0
+    # ab  = []
+    # for i in range(N):
+    #     a,b = int(int,input().split())
+    #     ab.append([a,b])
 
-    while height <= H:
-        height += 2**i
-        i += 1
-
-    print(i)
+    print()
 
 
 if __name__ == "__main__":
